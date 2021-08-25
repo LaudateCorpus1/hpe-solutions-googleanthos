@@ -1,0 +1,24 @@
+servers:
+ - Server_serial_number  : MXQ01201G8
+   ILO_Address           : 10.0.40.**
+   ILO_Username          : <username_of_the_admin_priviliges_account>
+   ILO_Password          : <password_of_the_admin_priviliges_account>
+   Hostname              : worker1.*****.local
+   Host_Username         : <host_username>
+   Host_Password         : <hashed_value_of_complex_password>
+   Host_IP               : 20.0.**.**
+   Host_Netmask          : 255.**.**.**
+   Host_Gateway          : 20.**.**.**
+   Host_DNS              : 20.**.**.**
+   OS_type               : rhel7
+   OS_image_name         : rhel-server-7.8-x86_64-dvd.iso
+   Host_Search           : <domain> #This input is required only in case SLES15 deployment Ex: twentynet.local
+    
+		   
+config:
+   HTTP_server_base_url: http://20.0.**.**/    #Installer machine ip address
+   HTTP_file_path: /usr/share/nginx/html/
+   base_kickstart_filepath: <$BASE_DIR/os_deployment/>
+
+
+

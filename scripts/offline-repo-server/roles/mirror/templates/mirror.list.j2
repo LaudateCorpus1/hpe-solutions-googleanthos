@@ -1,0 +1,48 @@
+###
+## Copyright (2021) Hewlett Packard Enterprise Development LP
+##
+## Licensed under the Apache License, Version 2.0 (the "License");
+## You may not use this file except in compliance with the License.
+## You may obtain a copy of the License at
+##
+## http://www.apache.org/licenses/LICENSE-2.0
+##
+## Unless required by applicable law or agreed to in writing, software
+## distributed under the License is distributed on an "AS IS" BASIS,
+## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+## See the License for the specific language governing permissions and
+## limitations under the License.
+####
+############# config ##################
+#
+{% if dir is defined %}
+set base_path    {{ dir }}
+{% elif dir is not defined %}
+set base_path    /var/spool/apt-mirror
+{% endif %}
+#
+# set mirror_path  $base_path/mirror
+# set skel_path    $base_path/skel
+# set var_path     $base_path/var
+# set cleanscript $var_path/clean.sh
+# set defaultarch  <running host architecture>
+# set postmirror_script $var_path/postmirror.sh
+# set run_postmirror 0
+set nthreads     20
+set _tilde 0
+#
+############# end config ##############
+
+deb http://archive.ubuntu.com/ubuntu artful main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu artful-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu artful-updates main restricted universe multiverse
+#deb http://archive.ubuntu.com/ubuntu artful-proposed main restricted universe multiverse
+#deb http://archive.ubuntu.com/ubuntu artful-backports main restricted universe multiverse
+
+deb-src http://archive.ubuntu.com/ubuntu artful main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu artful-security main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu artful-updates main restricted universe multiverse
+#deb-src http://archive.ubuntu.com/ubuntu artful-proposed main restricted universe multiverse
+#deb-src http://archive.ubuntu.com/ubuntu artful-backports main restricted universe multiverse
+
+clean http://archive.ubuntu.com/ubuntu
