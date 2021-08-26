@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Deploying operating system on bare-metal nodes | HPE SOLUTION FOR GOOGLE ANTHOS 1.8 ON HPE INFRASTRUCTURE</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Hewlett Packard Enterprise">
+    
+    <link rel="preload" href="/hpe-solutions-googleanthos/1.8/assets/css/0.styles.279d5301.css" as="style"><link rel="preload" href="/hpe-solutions-googleanthos/1.8/assets/js/app.070a928b.js" as="script"><link rel="preload" href="/hpe-solutions-googleanthos/1.8/assets/js/2.595b60e2.js" as="script"><link rel="preload" href="/hpe-solutions-googleanthos/1.8/assets/js/15.b436feca.js" as="script"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/10.2cb67f83.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/11.b89b511b.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/12.38cb19f8.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/13.313ad5bf.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/14.6489505a.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/16.000a0108.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/17.017b737e.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/18.30bd0b5c.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/3.8fab445c.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/4.0aa31018.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/5.20062654.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/6.fd2018e6.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/7.f5a60f53.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/8.eed09b15.js"><link rel="prefetch" href="/hpe-solutions-googleanthos/1.8/assets/js/9.18c5a388.js">
+    <link rel="stylesheet" href="/hpe-solutions-googleanthos/1.8/assets/css/0.styles.279d5301.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/hpe-solutions-googleanthos/1.8/" class="home-link router-link-active"><!----> <span class="site-name">HPE SOLUTION FOR GOOGLE ANTHOS 1.8 ON HPE INFRASTRUCTURE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/hpe-solutions-googleanthos/1.8/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="http://www.hpe.com/info/ra" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  RA Library
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/hpe-solutions-googleanthos/1.8/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="http://www.hpe.com/info/ra" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  RA Library
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Google Anthos On HPE Infrastructure</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Solution Overview</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Solution Components</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Solution Deployment</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/hpe-solutions-googleanthos/1.8/Solution-Deployment/Solution-deployment-flow.html" class="sidebar-link">Solution Deployment Flow</a></li><li><a href="/hpe-solutions-googleanthos/1.8/Solution-Deployment/Preparing-execution-environment.html" class="sidebar-link">Preparing the execution environment</a></li><li><a href="/hpe-solutions-googleanthos/1.8/Solution-Deployment/Operating-system-deployment.html" aria-current="page" class="active sidebar-link">Deploying operating system on bare-metal nodes</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/hpe-solutions-googleanthos/1.8/Solution-Deployment/Host-configuration.html" class="sidebar-link">Host Configuration</a></li><li><a href="/hpe-solutions-googleanthos/1.8/Solution-Deployment/Manually-install-google-anthos.html" class="sidebar-link">Manually Install and configure Google Anthos 1.8</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Resosurces and Additional Links</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="deploying-operating-system-on-bare-metal-nodes"><a href="#deploying-operating-system-on-bare-metal-nodes" class="header-anchor">#</a> Deploying operating system on bare-metal nodes</h1> <p><img src="/hpe-solutions-googleanthos/1.8/assets/img/image8.c7b330eb.png" alt=""></p> <div class="custom-block warning"><p class="custom-block-title">Pre-requisites</p> <p>Centos 7 or RHEL <a href="#installer-machine">Installer machine</a> with the
+following configurations is essential to initiate the OS deployment
+process.</p> <ol><li><p>At least 200 GB disk space (especially in the &quot;/&quot; partition), 4
+CPU cores and 8GB RAM.</p></li> <li><p>1 network interface with static IP address configured on same
+network as the management plane of the bare-metal servers and has access
+to internet.</p></li> <li><p>Python 3.6 or above is present and latest version associated pip is
+present.</p></li> <li><p>Ansible 2.9 should be installed</p></li> <li><p>OS ISO image is present in the HTTP file path within the installer
+machine.</p></li> <li><p>Ensure that SELinux status is disabled.</p></li></ol></div> <h3 id="anthos-hosts"><a href="#anthos-hosts" class="header-anchor">#</a> Anthos hosts</h3> <ul><li><p>2 network interfaces for the production network</p></li> <li><p>1 local drive to be used as the boot device</p></li> <li><p>Boot mode is set to UEFI</p></li> <li><p>Boot order - Hard disk</p></li> <li><p>Secure Boot - disabled</p></li></ul> <h3 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h3> <ol><li><p>Enable Python3 and Ansible Environment as mentioned in &quot;Installer
+machine&quot; section of deployment guide.</p></li> <li><p>Setup the installer machine.</p></li></ol> <div class="language- extra-class"><pre class="language-text"><code># sh setup.sh
+</code></pre></div><p>Enter the installer machine OS. (&quot;rhel7&quot; for RHEL OS and &quot;centos7&quot;
+for Centos OS)</p> <div class="custom-block tip"><p class="custom-block-title">NOTE</p> <p>Run the below command to fix any unwanted space, tabs error.</p> <div class="language- extra-class"><pre class="language-text"><code># sed -i \'s/\\r\$//\' \&lt;path\&gt;/setup.sh
+</code></pre></div></div> <ol start="3"><li>This script contains 1 input file input.json, both of which needs to
+be updated with values for all the variables present within them.</li></ol> <p>a. Edit input.json file with the following command and add the details
+of web server and operating system to be installed.</p> <p>Default password for Ansible Vault file &quot;config.json&quot; is
+<strong>changeme</strong>.</p> <p>Command to edit config.json</p> <div class="language- extra-class"><pre class="language-text"><code># ansible-vault edit input.json
+</code></pre></div><p>Example values for the input configuration is as follows</p> <div class="language- extra-class"><pre class="language-text"><code>{
+
+&quot;HTTP_server_base_url&quot; : &quot;http://10.0.x.x/&quot;,
+
+&quot;HTTP_file_path&quot; : &quot;/usr/share/nginx/html/&quot;,
+
+&quot;OS_type&quot; : &quot;srhel8&quot;,
+
+&quot;OS_image_name&quot; : &quot;\&lt;os_iso_image_name_with_extension\&gt;&quot;
+
+}
+
+{
+
+&quot;Server_serial_number&quot; : &quot;MXxxxxxDP&quot;,
+
+&quot;ILO_Address&quot; : &quot;10.0.x.x&quot;,
+
+&quot;ILO_Username&quot; : &quot;username&quot;,
+
+&quot;ILO_Password&quot; : &quot;password&quot;,
+
+&quot;Hostname&quot; : &quot;hostname01.twentynet.local&quot;,
+
+&quot;Bonding_Interface1&quot; : &quot;eth*&quot;,
+
+&quot;Bonding_Interface2&quot; : &quot;eth*&quot;,
+
+&quot;Host_IP&quot; : &quot;20.x.x.x&quot;,
+
+&quot;Host_Username&quot; : &quot;root&quot;,
+
+&quot;Host_Password&quot; : &quot;Password&quot;,
+
+&quot;Host_Netmask&quot; : &quot;255.x.x.x&quot;,
+
+&quot;Host_Gateway&quot; : &quot;20.x.x.x&quot;,
+
+&quot;Host_DNS&quot; : &quot;20.x.x.x&quot;,
+
+&quot;Host_Search&quot; : &quot;twentynet.local&quot;,
+
+&quot;GPU_Host&quot; : &quot;yes&quot;
+
+},
+
+{
+
+&quot;Server_serial_number&quot; : &quot;MXxxxxxDQ&quot;,
+
+&quot;ILO_Address&quot; : &quot;10.0.x.x&quot;,
+
+&quot;ILO_Username&quot; : &quot;username&quot;,
+
+&quot;ILO_Password&quot; : &quot;password&quot;,
+
+&quot;Hostname&quot; : &quot;hostname02.twentynet.local&quot;,
+
+&quot;Bonding_Interface1&quot; : &quot;eth*&quot;,
+
+&quot;Bonding_Interface2&quot; : &quot;eth*&quot;,
+
+&quot;Host_IP&quot; : &quot;20.0.x.x&quot;,
+
+&quot;Host_Username&quot; : &quot;root&quot;,
+
+&quot;Host_Password&quot; : &quot;Password&quot;,
+
+&quot;Host_Netmask&quot; : &quot;255.x.x.x&quot;,
+
+&quot;Host_Gateway&quot; : &quot;20.x.x.x&quot;,
+
+&quot;Host_DNS&quot; : &quot;20.x.x.x&quot;,
+
+&quot;Host_Search&quot; : &quot;twentynet.local&quot;,
+
+&quot;GPU_Host&quot;: &quot;No&quot;
+
+}
+
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">NOTE</p> <ul><li><p>Acceptable values for &quot;OS_type&quot; variable is &quot;rhel8&quot;, &quot;centos8&quot;,
+&quot;ubuntu18&quot;, and &quot;ubuntu20</p></li> <li><p>Default password for Ansible Vault files &quot;server_details.json&quot; is
+<strong>changeme</strong>.</p></li></ul></div> <div class="custom-block tip"><p class="custom-block-title">NOTE</p> <p>Acceptable values for &quot;GPU_Host&quot; variable is &quot;yes&quot; for host
+which has GPU cards and &quot;No&quot; for hosts which do not have GPU cards.</p></div> <ol start="4"><li>Executing the script to deploy operating system.</li></ol> <div class="language- extra-class"><pre class="language-text"><code>
+ ansible-playbook --i hosts deploy_os.yaml --ask-vault-pass
+
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">NOTE</p> <ol><li>Generic settings done as part of kickstart file for OS are as
+follows. It is recommended that the user reviews and modifies the
+kickstart files to suit their requirements.</li></ol> <ul><li><p>Minimal Installation</p></li> <li><p>Language - en_US</p></li> <li><p>Keyboard &amp; layout - US</p></li> <li><p>Partition</p></li> <li><p>/boot/efi ,fstype=&quot;vfat&quot; ,size=500MiB</p></li> <li><p>root, size = 150G</p></li> <li><p>srv , size = 100G</p></li> <li><p>swap, size = 62.96G</p></li> <li><p>var, size = 200G</p></li> <li><p>home, size = 25G</p></li></ul> <p>Specified Partitions are inline with Anthos implementation and is
+advised not to make changes to this.</p> <ul><li><p>timezone - America/NewYork</p></li> <li><p>NIC teaming is performed with devices as specified in
+Bonding_Interface field of input_files/server_details.json input file.
+It is further assigned with the Host_IP, Netmask, Domain as defined in
+the input_files/server_details.json input file.</p></li></ul></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/hpe-solutions-googleanthos/1.8/Solution-Deployment/Preparing-execution-environment.html" class="prev">
+        Preparing the execution environment
+      </a></span> <span class="next"><a href="/hpe-solutions-googleanthos/1.8/Solution-Deployment/Host-configuration.html">
+        Host Configuration
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/hpe-solutions-googleanthos/1.8/assets/js/app.070a928b.js" defer></script><script src="/hpe-solutions-googleanthos/1.8/assets/js/2.595b60e2.js" defer></script><script src="/hpe-solutions-googleanthos/1.8/assets/js/15.b436feca.js" defer></script>
+  </body>
+</html>
